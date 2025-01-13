@@ -15,15 +15,12 @@ public class DriverFactory {
         if (driver == null) {
             switch (browser.toLowerCase()) {
                 case "chrome":
-//                    System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
                     driver = new ChromeDriver();
                     break;
                 case "firefox":
-//                    System.setProperty("webdriver.gecko.driver", "path/to/geckodriver");
                     driver = new FirefoxDriver();
                     break;
                 case "edge":
-//                    System.setProperty("webdriver.edge.driver", "path/to/edgedriver");
                     driver = new EdgeDriver();
                     break;
                 default:

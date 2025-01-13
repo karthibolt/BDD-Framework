@@ -49,7 +49,7 @@ public class Dropdownselect {
         ExtentReport.getTest().log(Status.INFO, "Driver closed successfully");
         ExtentReport.flush();
     }
-    @Test
+
     @Given("User launches the application")
     public void user_launches_the_application() throws InterruptedException {
 
@@ -81,7 +81,7 @@ public class Dropdownselect {
         Assert.assertEquals(Alltotalrows, 7, "Table row has not matched ");
 
     }
-    @Test
+
     @When("User enters click the dropdown")
     public void user_enters_click_the_dropdown() {
 

@@ -1,0 +1,6 @@
+Utility\LoggerUtil.class
+Utility\ExtentReport.class
+Pages\dropdownpage.class
+Utility\PropertyReader.class
+Pages\loginpage.class
+Utility\DriverFactory.class

@@ -16,15 +16,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
 import java.util.concurrent.TimeUnit;
 
+@Test(groups = {"Automationtests"})
 public class LoginStepDef {
 
   private WebDriver driver;
   private loginpage login;
 
   public String baseurl = PropertyReader.getBaseUrl();
-    public String browsername = PropertyReader.getbrowser();
+  public String browsername = PropertyReader.getbrowser();
 
   @Before
   public void setup(){
@@ -41,6 +44,7 @@ public class LoginStepDef {
       ExtentReport.flush();
 
   }
+
     @Given("User is on the login page")
     public void user_is_on_the_login_page() {
 
@@ -70,6 +74,7 @@ public class LoginStepDef {
         System.out.println("Login Failed");
       }
     }
+
   @Then("user is able to click the logout")
   public void user_is_able_to_click_the_logout() {
 
@@ -79,16 +84,18 @@ public class LoginStepDef {
 
 
   }
+
   @When("user enter invalid credentials")
   public void user_enter_invalid_credentials() {
 
       driver.get(baseurl);
       login = new loginpage(driver);
-    login.enterUsername("1234");
-    login.enterPassword("1234");
-    login.clickLogin();
+      login.enterUsername("1234");
+      login.enterPassword("1234");
+      login.clickLogin();
 
   }
+
   @Then("User should throw message")
   public void user_should_throw_message() {
     driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

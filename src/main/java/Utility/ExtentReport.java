@@ -30,6 +30,9 @@ public class ExtentReport {
     }
 
     public static ExtentTest getTest() {
+        if (extentTest.get() == null) {
+            throw new IllegalStateException("ExtentTest is not initialized. Check initialization.");
+        }
         return extentTest.get();
     }
 
